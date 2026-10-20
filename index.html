@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Borealis Corporations | Auditoría y saneamiento de software</title>
+  <meta name="description" content="Auditoría técnica de software y saneamiento de código para agencias y product studios de Argentina, España, Reino Unido y Polonia. Precio fijo y plazos cerrados.">
+  <meta name="theme-color" content="#071C2A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Borealis Corporations | Auditoría y saneamiento de software">
+  <meta property="og:description" content="Revisamos tu código y entregamos los arreglos como pull requests. Precio fijo y plazos cerrados.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Borealis Corporations, ir al inicio">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#071C2A"/>
+        <path d="M8 46 C 18 20, 28 16, 32 32 S 48 44, 56 14" fill="none" stroke="#3FD3B0" stroke-width="6" stroke-linecap="round"/>
+        <path d="M8 54 C 20 34, 30 30, 36 42 S 50 52, 56 30" fill="none" stroke="#A99BFF" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span>Borealis</span>
+    </a>
+
+    <button id="menu-toggle" class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+      <span class="bars" aria-hidden="true"></span>
+    </button>
+
+    <nav id="nav" class="nav" aria-label="Principal">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#paises">Países</a>
+      <a href="#contacto">Contacto</a>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-pressed="false" aria-label="Cambiar a tema oscuro">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path class="sun" d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.66-5.66 1.41-1.41M4.93 19.07l1.41-1.41m0-11.32L4.93 4.93m14.14 14.14-1.41-1.41M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path class="moon" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+      <canvas id="aurora" aria-hidden="true"></canvas>
+      <div class="hero-inner wrap">
+        <h1 id="hero-title">Auditamos tu software y te entregamos el mapa de qué arreglar.</h1>
+        <p class="hero-lead">Un informe técnico priorizado, con archivo y línea de cada hallazgo, y los arreglos aplicados como pull requests sobre tu repositorio. Precio fijo y plazos cerrados.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#servicios">Ver servicios</a>
+          <a class="btn btn-ghost" data-link="whatsapp" href="#contacto" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="section wrap" aria-labelledby="nosotros-title">
+      <div class="about">
+        <div>
+          <h2 id="nosotros-title">Un equipo senior para tu software.</h2>
+          <p>Borealis Corporations revisa y ordena el código de Agencies y product studios. Analizamos tu proyecto como lo haría un equipo senior, entregamos el informe priorizado y dejamos el proyecto documentado para tu cliente o para el próximo equipo.</p>
+          <p>Trabajamos con reglas claras: precio fijo, plazos cerrados, cambios entregados como pull requests sobre tu repositorio y nada en producción sin tu aprobación.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Servicios disponibles</dt><dd><span data-count-available data-count="3">3</span></dd></div>
+          <div><dt>Países donde operamos</dt><dd><span data-count="4">4</span></dd></div>
+          <div><dt>Idiomas de atención</dt><dd><span data-count="3">3</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="servicios" class="section wrap" aria-labelledby="servicios-title">
+      <h2 id="servicios-title">Servicios</h2>
+      <p class="section-lead">Ocho líneas de servicio en cuatro áreas. Los que todavía no tienen entrega están marcados. Filtrá por área o buscá por nombre, y tocá un servicio para ver qué entregamos.</p>
+
+      <div class="toolbar">
+        <div id="filters" class="filters" role="group" aria-label="Filtrar por área"></div>
+        <div class="search">
+          <label for="search">Buscar servicio</label>
+          <input id="search" type="search" placeholder="Nombre, área o palabra clave" autocomplete="off">
+        </div>
+      </div>
+
+      <p id="results-count" class="results-count" aria-live="polite"></p>
+      <div id="grid" class="grid"></div>
+      <div id="empty" class="empty" hidden>
+        <p>No hay servicios que coincidan con la búsqueda.</p>
+        <button id="reset-filters" class="btn btn-outline" type="button">Borrar filtros</button>
+      </div>
+    </section>
+
+    <section id="paises" class="section wrap" aria-labelledby="paises-title">
+      <h2 id="paises-title">Dónde trabajamos</h2>
+      <p class="section-lead">Atendemos empresas en cuatro países, en su idioma y con facturación local.</p>
+
+      <div class="markets">
+        <article class="market">
+          <h3>Argentina</h3>
+          <p>Agencias y product studios de software que entregan proyectos a terceros y necesitan saber en qué estado está el código antes de la próxima entrega.</p>
+          <p class="note">Facturación en dólares, con opción de pago desde la caja de ahorro en dólares del cliente para evitar recargos cambiarios.</p>
+        </article>
+        <article class="market">
+          <h3>España</h3>
+          <p>Agencias y product studios que trabajan con clientes finales y entregran software a nombre de terceros.</p>
+          <p class="note">Facturación en euros. Para el email comercial respetamos el consentimiento que exige la ley: no escribimos en frío.</p>
+        </article>
+        <article class="market">
+          <h3>Reino Unido</h3>
+          <p>Agencias y product studios de software, con atención comercial activa.</p>
+          <p class="note">Atención en inglés.</p>
+        </article>
+        <article class="market">
+          <h3>Polonia</h3>
+          <p>Equipos de software que necesitan limpiar su base de código y ordenar la entrega de sus proyectos.</p>
+          <p class="note">Atención en polaco o inglés.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="section wrap" aria-labelledby="contacto-title">
+      <div class="contact">
+        <div class="contact-info">
+          <h2 id="contacto-title">Escribinos</h2>
+          <p>Contanos qué necesitás y te respondemos dentro de un día hábil.</p>
+          <ul class="contact-list">
+            <li>
+              <span class="label">Teléfono</span>
+              <a data-link="phone" data-cfg="phoneDisplay" href="#contacto">Llamar</a>
+            </li>
+            <li>
+              <span class="label">WhatsApp</span>
+              <a data-link="whatsapp" href="#contacto" target="_blank" rel="noopener">Abrir chat</a>
+            </li>
+            <li>
+              <span class="label">Email</span>
+              <span class="email-row">
+                <a data-link="email" data-cfg="email" href="#contacto">Enviar correo</a>
+                <button id="copy-email" class="btn btn-outline btn-sm" type="button">Copiar</button>
+              </span>
+            </li>
+            <li>
+              <span class="label">Idiomas</span>
+              <span>Español, inglés y polaco</span>
+            </li>
+            <li class="social">
+              <a data-link="linkedin" href="#contacto" target="_blank" rel="noopener">LinkedIn</a>
+              <a data-link="instagram" href="#contacto" target="_blank" rel="noopener">Instagram</a>
+            </li>
+          </ul>
+        </div>
+
+        <form id="contact-form" class="form" novalidate>
+          <div class="field">
+            <label for="f-name">Nombre</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="err-name">
+            <p id="err-name" class="err" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="err-email">
+            <p id="err-email" class="err" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Teléfono <span class="opt">(opcional)</span></label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="err-phone">
+            <p id="err-phone" class="err" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="f-topic">Motivo</label>
+            <select id="f-topic" name="topic">
+              <option>Consulta general</option>
+              <option>Interés en un servicio</option>
+              <option>Alianza comercial</option>
+              <option>Trabajar con nosotros</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-message">Mensaje</label>
+            <textarea id="f-message" name="message" rows="5" required aria-describedby="err-message"></textarea>
+            <p id="err-message" class="err" role="alert"></p>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="f-site">No completar este campo</label>
+            <input id="f-site" name="site" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="consent">
+            <label class="check">
+              <input id="f-privacy" name="privacyNotice" type="checkbox" required aria-describedby="err-privacy">
+              <span>Leí el <a href="privacidad.html">aviso de privacidad</a> y acepto que mis datos se usen para responder esta consulta.</span>
+            </label>
+            <p id="err-privacy" class="err" role="alert"></p>
+            <label class="check">
+              <input id="f-marketing" name="marketingEmail" type="checkbox">
+              <span>Quiero recibir novedades y ofertas por email. Opcional, y se puede cancelar cuando quieras.</span>
+            </label>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+            <button id="send-wa" class="btn btn-outline" type="button">Enviar por WhatsApp</button>
+          </div>
+          <p id="form-status" class="status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> Borealis Corporations. Todos los derechos reservados.</p>
+      <nav class="footer-nav" aria-label="Legal">
+        <a href="privacidad.html">Aviso de privacidad</a>
+        <a href="#inicio">Volver arriba</a>
+      </nav>
+    </div>
+  </footer>
+
+  <a id="wa-float" class="wa-float" data-link="whatsapp" href="#contacto" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M16.02 3C8.83 3 3 8.83 3 16c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.72A13 13 0 0 0 16.02 29C23.2 29 29 23.17 29 16S23.2 3 16.02 3Zm0 23.8c-1.95 0-3.86-.53-5.53-1.52l-.4-.24-3.96 1.02 1.06-3.86-.26-.4A10.77 10.77 0 0 1 5.2 16c0-5.96 4.86-10.8 10.82-10.8S26.8 10.04 26.8 16 21.98 26.8 16.02 26.8Zm5.93-8.08c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.51-.16-.73.16-.22.32-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.32-.16-1.37-.5-2.6-1.6-.96-.86-1.6-1.91-1.8-2.23-.19-.32-.02-.5.14-.66.15-.14.32-.38.48-.57.16-.19.22-.32.32-.54.11-.22.05-.4-.03-.57-.08-.16-.73-1.76-1-2.4-.26-.63-.53-.54-.73-.55h-.62c-.22 0-.57.08-.87.4-.3.32-1.14 1.11-1.14 2.72s1.17 3.15 1.33 3.37c.16.22 2.3 3.5 5.56 4.92.78.34 1.38.54 1.85.69.78.25 1.49.21 2.05.13.63-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.3-.22-.62-.38Z"/></svg>
+    <span class="wa-label">WhatsApp</span>
+  </a>
+
+  <dialog id="project-dialog" class="dialog" aria-labelledby="dlg-title">
+    <div class="dlg-head">
+      <p class="dlg-meta"><span id="dlg-category"></span></p>
+      <button id="dlg-close" class="icon-btn" type="button" aria-label="Cerrar detalle">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="dlg-swatch" class="swatch swatch-lg" aria-hidden="true"></div>
+    <h3 id="dlg-title"></h3>
+    <p id="dlg-soon" class="soon-note" hidden>Este servicio todavía no está disponible. Podés escribirnos igual y te avisamos cuándo lo lanzamos.</p>
+    <p id="dlg-desc"></p>
+    <dl id="dlg-metrics" class="metrics"></dl>
+    <ul id="dlg-tags" class="tags"></ul>
+    <div class="actions">
+      <button id="dlg-consult" class="btn btn-primary" type="button">Consultar por este servicio</button>
+      <button id="dlg-close-2" class="btn btn-outline" type="button">Cerrar</button>
+    </div>
+  </dialog>
+
+  <noscript>
+    <p class="noscript">Este sitio necesita JavaScript para mostrar los servicios y el formulario. Podés escribirnos directamente por email o WhatsApp.</p>
+  </noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/aurora.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

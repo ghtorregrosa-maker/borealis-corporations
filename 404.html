@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página no encontrada | Borealis Corporations</title>
+  <meta name="robots" content="noindex">
+  <style>
+    html { color-scheme: light dark; }
+    body { margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 1.5rem; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #071C2A; color: #E6F0F3; line-height: 1.6; }
+    main { max-width: 34rem; }
+    h1 { font-size: clamp(2rem, 8vw, 3.2rem); line-height: 1.1; margin: 0 0 1rem; }
+    p { margin: 0 0 1.5rem; color: #C9DDE6; }
+    a { display: inline-block; padding: .85rem 1.4rem; border-radius: 6px; background: #3FD3B0; color: #052018; font-weight: 600; text-decoration: none; }
+    a:focus-visible { outline: 3px solid #A99BFF; outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>No encontramos esta página.</h1>
+    <p>El enlace puede estar mal escrito o la página ya no existe.</p>
+    <a id="home" href="./">Volver al inicio</a>
+  </main>
+  <script>
+    // En GitHub Pages el sitio vive en /nombre-del-repo/, así que el inicio se calcula desde la URL.
+    (function () {
+      var parts = location.pathname.split('/').filter(Boolean);
+      var isProjectSite = location.hostname.endsWith('github.io') && parts.length > 0;
+      document.getElementById('home').href = isProjectSite ? '/' + parts[0] + '/' : '/';
+    })();
+  </script>
+</body>
+</html>
